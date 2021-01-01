@@ -1,4 +1,10 @@
 <?php
+
+require_once('vendor/autoload.php');
+
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__)->load();
+
 $BASE="https://api.dpd.co.uk";
 
 $method = '/user/?action=login';
@@ -11,7 +17,7 @@ $options = array(
         'Host'  => 'api.dpd.co.uk',
         'header'=>  "Content-Type: application/json\r\n" .
                     "Accept: application/json\r\n".
-                    "Authorization: Basic ". base64_encode("username:password") ."\r\n".
+                    "Authorization: Basic ". base64_encode($_ENV['DPD_USERNAME'].':'.$_ENV['DPD_PASSWORD']) ."\r\n".
                     "Content-Length: 0"
       )
 );

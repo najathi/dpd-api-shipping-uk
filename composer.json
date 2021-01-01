@@ -1,0 +1,12 @@
+{
+    "name": "najat/dpd",
+    "authors": [
+        {
+            "name": "Najathi",
+            "email": "najathi777@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.2"
+    }
+}

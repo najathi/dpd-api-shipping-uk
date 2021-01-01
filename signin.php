@@ -1,5 +1,10 @@
 <?php
 
+require_once('vendor/autoload.php');
+
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__)->load();
+
 class Authentication {
     private $url;
     private $timeout;
@@ -39,6 +44,6 @@ class Authentication {
 };
 
 // example usage below
-$client = new Authentication("https://api.dpd.co.uk", 'username', 'password', 'id');
+$client = new Authentication("https://api.dpd.co.uk", $_ENV['DPD_USERNAME'], $_ENV['DPD_PASSWORD'], $_ENV['DPD_USER_ID']);
 $result = $client->doAuthentication();
 echo $result;
