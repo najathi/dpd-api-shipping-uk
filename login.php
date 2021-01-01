@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once('vendor/autoload.php');
 
 use Dotenv\Dotenv;
@@ -31,4 +33,8 @@ $response    = json_decode($result);
 
 $data=(json_decode($result,true));
 $session=$data['data']['geoSession'];
+
+// store to session variable
+$_SESSION["geoSession"] = $session;
+
 echo $session;

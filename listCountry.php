@@ -9,7 +9,7 @@ $dotenv = Dotenv::createImmutable(__DIR__)->load();
 
 $BASE="https://api.dpd.co.uk";
 
-$method = '/shipping/network/?businessUnit=0&deliveryDirection=1&numberOfParcels=1&shipmentType=0&totalWeight=1.0&deliveryDetails.address.countryCode=GB&deliveryDetails.address.countryName=&deliveryDetails.address.locality=&deliveryDetails.address.organisation=&deliveryDetails.address.postcode=EX34 8LY&deliveryDetails.address.property=&deliveryDetails.address.street=&deliveryDetails.address.town=&deliveryDetails.address.county=&collectionDetails.address.countryCode=&collectionDetails.address.countryName=&collectionDetails.address.locality=&collectionDetails.address.organisation=&collectionDetails.address.postcode=&collectionDetails.address.property=&collectionDetails.address.street=&collectionDetails.address.town=&collectionDetails.address.county=GB';
+$method = '/shipping/country';
 
 $url = $BASE.$method;
 

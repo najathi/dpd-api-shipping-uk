@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once('vendor/autoload.php');
 
 use Dotenv\Dotenv;
@@ -46,4 +48,8 @@ class Authentication {
 // example usage below
 $client = new Authentication("https://api.dpd.co.uk", $_ENV['DPD_USERNAME'], $_ENV['DPD_PASSWORD'], $_ENV['DPD_USER_ID']);
 $result = $client->doAuthentication();
+
+// store to session variable
+$_SESSION["geoSession"] = $session;
+
 echo $result;
