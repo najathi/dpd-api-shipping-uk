@@ -17,4 +17,4 @@ copy the .env.example file and rename the file to .env
 
 ### or run on xampp server
 
-#### or view your browser"# php-boilerplate-project" 
+#### or view your browser
