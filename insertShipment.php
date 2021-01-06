@@ -103,11 +103,26 @@ if (isset($_SESSION['geoSession'])) {
     // var_dump($response);
     
     $data=(json_decode($result,true));
-    var_dump($data);
+    // var_dump($data);
     
     $shipmentId=$data['data']['shipmentId'];
     ///shipping/shipment/[shipmentId]/label/
-    echo $shipmentId;
+    // echo $shipmentId;
+
+    //array(2) { ["error"]=> NULL ["data"]=> array(3) { ["shipmentId"]=> int(596514326) ["consolidated"]=> bool(false) ["consignmentDetail"]=> array(1) { [0]=> array(2) { ["consignmentNumber"]=> string(10) "1917037803" ["parcelNumbers"]=> array(1) { [0]=> string(14) "15501917037803" } } } } } 
+
+    var_dump($data['data']['consignmentDetail'][0]['consignmentNumber']);
+    echo "<br/>";
+    echo "<br/>";
+
+    echo "shipmentId: ".$data['data']['shipmentId'];
+    echo "<br/>";
+    echo "consolidated: "."false";
+    echo "<br/>";
+    echo "consignmentNumber: ".$data['data']['consignmentDetail'][0]['consignmentNumber'];
+    echo "<br/>";
+    echo "shipmentId: ".$data['data']['consignmentDetail'][0]['parcelNumbers'][0];
+    echo "<br/>";
 
 } else{
 

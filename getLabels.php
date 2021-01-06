@@ -11,7 +11,7 @@ $BASE="https://api.dpd.co.uk";
 
 $shipmentId = "596514326";
 
-$method = ":/shipping/shipment/". $shipmentId ."/label/";
+$method = "/shipping/shipment/". $shipmentId ."/label/";
 
 $url = $BASE.$method;
 
