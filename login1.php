@@ -1,5 +1,7 @@
 <?php
 
+// login - method 1
+
 session_start();
 
 require_once('vendor/autoload.php');
