@@ -39,4 +39,9 @@ $session=$data['data']['geoSession'];
 // store to session variable
 $_SESSION["geoSession"] = $session;
 
+if ($_SESSION["geoSession"]) {
+    header("Location: ./insertShipment.php");
+    die();
+}
+
 echo $session;
