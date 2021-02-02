@@ -19,7 +19,7 @@ if (isset($_SESSION['geoSession'])) {
         "job_id": null,
         "collectionOnDelivery": false,
         "invoice": null,
-        "collectionDate": "2021-01-05T016:00:00",
+        "collectionDate": "2021-01-21T016:00:00",
         "consolidate": false,
         "consignment": [{
             "consignmentNumber": null,
@@ -58,7 +58,7 @@ if (isset($_SESSION['geoSession'])) {
             "mobile": "07921000001"
             }
             },
-            "networkCode": "1^01",
+            "networkCode": "1^12",
             "numberOfParcels": 1,
             "totalWeight": 5,
             "shippingRef1": "My Ref 1",
@@ -79,6 +79,8 @@ if (isset($_SESSION['geoSession'])) {
     $length=strlen($json);
     // echo $length;
     
+    echo $_SESSION['geoSession'];
+
     $options = array(
     'http' => array(
         'method'  => 'POST',
@@ -96,7 +98,9 @@ if (isset($_SESSION['geoSession'])) {
     $context = stream_context_create($options);
     // echo var_dump($context);
     $result = file_get_contents($url, false, $context);
-    // echo $result;
+
+    echo "<br/>";
+    echo $result;
     
     
     $response = json_decode($result);
@@ -110,6 +114,9 @@ if (isset($_SESSION['geoSession'])) {
     // echo $shipmentId;
 
     //array(2) { ["error"]=> NULL ["data"]=> array(3) { ["shipmentId"]=> int(596514326) ["consolidated"]=> bool(false) ["consignmentDetail"]=> array(1) { [0]=> array(2) { ["consignmentNumber"]=> string(10) "1917037803" ["parcelNumbers"]=> array(1) { [0]=> string(14) "15501917037803" } } } } } 
+
+    echo "<br/>";
+
 
     var_dump($data['data']['consignmentDetail'][0]['consignmentNumber']);
     echo "<br/>";
@@ -126,6 +133,6 @@ if (isset($_SESSION['geoSession'])) {
 
 } else{
 
-    echo "<p>GEO Session is not exists! Please must login first <a href='login.php'>login</a></p>";
+    echo "<p>GEO Session is not exists! Please must login first <a href='login1.php'>login</a></p>";
 
 }
